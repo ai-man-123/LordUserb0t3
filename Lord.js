@@ -73,7 +73,7 @@ const { wikiSearch } = require('./lib/wiki.js')
 const { sewabotkak } = require('./lib/sewabot.js')
 const { addBadword, delBadword, isKasar, addCountKasar, isCountKasar, delCountKasar } = require("./lib/badword");
 const { addCommands, getJawabanCmd, getSoalCmd, getCommandsPosi, checkCommands, isCreated, deleteCommands } = require('./lib/commands')
-const lolkey = '78bd89cd7b4d6205e3e18061' 
+const lolkey = '4ef1b11287339c1b10699ece' 
 
 			const tictactoe = JSON.parse(fs.readFileSync("./database/tictactoe.json"))
 			const _win = JSON.parse(fs.readFileSync('./database/tttwin.json'))
@@ -140,14 +140,14 @@ let memberwin = 1
 let memberlose = 1 
 
 //=================================================//
-module.exports = Zeeone = async (Zeeone, Ofc) => {
+module.exports = aiman = async (Zeeone, Ofc) => {
 	try {
         if (!Ofc.hasNewMessage) return
         Ofc = Ofc.messages.all()[0]
         if (!Ofc.message) return
 		if (Ofc.key && Ofc.key.remoteJid == 'status@broadcast') return
 		global.blocked
-		m = simple.smsg(Zeeone, Ofc)
+		m = simple.smsg(aiman, Ofc)
 		let { mentioned } = m
 		bail = m.isBaileys
         Ofc.message = (Object.keys(Ofc.message)[0] === 'ephemeralMessage') ? Ofc.message.ephemeralMessage.message : Ofc.message
@@ -194,7 +194,7 @@ module.exports = Zeeone = async (Zeeone, Ofc) => {
 		}
         const cmd = (type === 'conversation' && Ofc.message.conversation) ? Ofc.message.conversation : (type == 'imageMessage') && Ofc.message.imageMessage.caption ? Ofc.message.imageMessage.caption : (type == 'videoMessage') && Ofc.message.videoMessage.caption ? Ofc.message.videoMessage.caption : (type == 'extendedTextMessage') && Ofc.message.extendedTextMessage.text ? Ofc.message.extendedTextMessage.text : (type == 'stickerMessage') && (getCmd(Ofc.message.stickerMessage.fileSha256.toString('hex')) !== null && getCmd(Ofc.message.stickerMessage.fileSha256.toString('base64')) !== undefined) ? getCmd(Ofc.message.stickerMessage.fileSha256.toString('base64')) : "".slice(1).trim().split(/ +/).shift().toLowerCase()
         if(multiprefix){
-		var prefix = /^[°•π÷×¶∆£¢€¥®™✓=|~zZ+×_!#%^&./\\©^]/.test(cmd) ? cmd.match(/^[°•π÷×¶∆£¢€¥®™✓=|~xzZ+×_!#,|`÷?;:%^&./\\©^]/gi) : '-'	  
+		var prefix = /^[°•π÷×¶∆£¢€¥®™✓=|~zZ+×_!#%^&./\\©^]🗿/.test(cmd) ? cmd.match(/^[°•π÷×¶∆£¢€¥®™✓=|~xzZ+×_!#,|`÷?;:%^&./\\©^]/gi) : '-'	  
 		} else {
 		if (nopref){
 		prefix = ''
